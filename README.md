@@ -19,4 +19,4 @@ Accepting or ignoring friendrequests
 removing friends from your list  
 viewing post made by your friends in the newsfeed section  
   
-Sample Video: https://www.youtube.com/watch?v=AIiRcrmAUeI&t=36s
+Sample Video: https://www.youtube.com/watch?v=AIiRcrmAUeI&feature=youtu.be  
