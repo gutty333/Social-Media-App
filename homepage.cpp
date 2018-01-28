@@ -168,6 +168,11 @@ void homepage::on_pushButton_post_clicked()
         QMessageBox::warning(this,"Warning","Input field is empty, please create a post");
         return;
     }
+    else
+    {
+        // editing the post so it includes the author at the start
+        postCreated = fullName + " : " + postCreated;
+    }
 
     // connect to our database
     MainWindow database;
@@ -464,17 +469,15 @@ void homepage::on_pushButton_acceptNotification_clicked()
         }
 
         // note since this is bi connection we create another record
-        // reasong for this is to make it more accesible to extract who is friends with who
+        // reason for this is to make it more accesible to extract who is friends with who
         query.exec("insert into FriendPair (User1ID,User2ID) values ('"+senderID+"','"+userId+"')");
-
-        // here we update our friends list with the new addition
-        loadFriends();
 
         // we remove the notification from our database
         if (query.exec("delete from Notification where NotificationID='"+notificationID+"'"))
         {
-            // we update our notification view after deleting the previously selected
+            // we update both our notifications and friends list after accepting the request
             loadNotifications();
+            loadFriends();
         }
         else
         {
