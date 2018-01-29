@@ -345,7 +345,6 @@ void homepage::on_pushButton_search_clicked()
     QSqlQueryModel* result = new QSqlQueryModel();
     QSqlQuery* filter = new QSqlQuery();
 
-    //filter->exec("select FullName from User where (FullName like '"+target+"' or Country like '"+target+"') and (Username!='"+username+"')");
     filter->exec("select FullName from User where (FullName like '"+target+"' or Country like '"+target+"') and (Username!='"+username+"') and (ID not in (select User2ID from FriendPair where User1ID='"+userId+"'))");
 
     result->setQuery(*filter);
