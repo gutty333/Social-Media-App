@@ -2,10 +2,6 @@
 A social media offline program that borrows many of the basic functionalities found in common services.    
 Created using C++, Qt framework, and SQLite.  
   
-If you decide to run the program please change line 21 from the mainWindow.cpp  
-usersDataBase.setDatabaseName("C:/Users/carlo/Documents/Qt Projects/SocialMediaApp/socialMediaUsers.db");  
-It should be changed to the path in which the database file is placed.   
-  
 Features Include:  
 Creating an account  
 Logging in with an existing account  
